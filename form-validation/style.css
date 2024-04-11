@@ -1,0 +1,90 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(130deg, rgb(14, 64, 165) 0%, rgb(5, 146, 198) 35%, rgb(175, 195, 121) 100%);
+}
+.form-group{
+    width:450px;
+    padding: 15px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;;
+}
+.formevent label{
+    display: block;
+    
+    color: rgb(34, 39, 39);
+    margin: 5px 0;
+}
+.formevent input{
+    width: 100%;
+
+   outline: none;
+    padding: 7px 3px;
+    border: solid 1px rgb(227, 225, 243);
+    border-radius: 2px;
+    background-color:rgb(238, 236, 236);
+    font-size: 18px;
+}
+/* .formevent input:active{
+    border: 1px rgb(203, 22, 10) solid;
+} */
+.formevent input::placeholder{
+    color:rgb(169, 165, 165);
+    font-size: 15px;
+    padding: 0 0 0 10px;
+}
+.showerr{
+    margin: 3px 0 0 0 ;
+    color: red;
+    visibility: hidden;
+    
+}
+.showerr1{
+    margin: 3px 0 0 0 ;
+    color: red;
+    visibility: hidden;
+    
+}
+.showerr2{
+    margin: 3px 0 0 0 ;
+    color: red;
+    visibility: hidden;
+    
+}
+.showerr4{
+    margin: 3px 0 0 0 ;
+    color: red;
+    visibility: hidden;
+    
+}
+.showerr3{
+    margin: 3px 0 0 0 ;
+    color: red;
+    visibility: hidden;
+    
+}
+button{
+    width: 110px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    transition: ease-in-out 1s;
+    cursor: pointer;
+    
+}
+
+.show{
+    visibility: visible !important;
+    color: red;
+}
+@media screen and (max-width:576px){
+    body{
+        height:auto;
+        margin-top: 20px;
+    }
+
+}

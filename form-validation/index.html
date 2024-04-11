@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form class="form-group" id="form" autocomplete="off">
+        <div class="formevent">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Eg: abcd">
+        <p class="showerr">error</p>
+    </div>
+    <div class="formevent">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Eg: efghe">
+        <p class="showerr3">error</p>
+    </div>
+    <div class="formevent">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="12">
+        <p class="showerr2">error</p>
+    </div>
+    <div class="formevent">
+    <label for="password">Password</label>
+    <input type="password" id="password" data="show" placeholder="Eg: 1@&Aa.,/[">
+    
+    <P class="showerr1">sds</P>
+</div>
+<input type="checkbox" id="showpassword" onclick="seepassword()">
+    <label for="showpassword">Show Password</label>
+</br>
+</br>
+    <div class="formevent">
+    <label for="cnfpassword"> Conform Password</label>
+    <input type="password" id="cnfpassword" placeholder="Eg: 1@&Aa.,/[">
+    <p class="showerr4"></p>
+</div>
+</br>
+<button>submit</button>
+    </form>
+
+
+
+
+
+    <script>
+        const form = document.getElementById("form");
+        const fname = document.getElementById("fname");
+        const lname = document.getElementById("lname");
+        const age = document.getElementById("age");
+        const err = document.querySelector(".showerr");
+        const err1 = document.querySelector(".showerr1");
+        const err2 = document.querySelector(".showerr2");
+        const err4 = document.querySelector(".showerr3");
+        const err3 = document.querySelector(".showerr4");
+        const input = document.getElementsByTagName("input");
+        const password = document.getElementById("password");
+        const cnfpassword = document.getElementById("cnfpassword");
+        
+
+        function checkname(){
+            var nameval = fname.value;
+         if(nameval === ''){
+            //err.className = "show"
+            err.style.visibility = "visible";
+            
+            err.innerHTML = "enter your name";
+         
+        }
+        else if(nameval.length < 3){
+           
+            err.innerHTML = "Enter minimum 5 characters";
+        }
+        else{
+            err.innerHTML =""
+        }
+        
+        }
+        function checklname(){
+            var lnameval = lname.value;
+            if(lnameval == "" ){
+                err4.style.visibility = "visible";
+                err4.innerHTML = "enter your last name";
+            }
+            else{
+                err4.style.visibility = "hidden";
+            }
+        }
+        
+        function checkage() {
+            var ageval = age.value;
+            if(ageval === '' ){
+                err2.style.visibility = "visible";
+                err2.innerHTML = "Enter your age";
+            }
+            else{
+                err2.style.visibility = "hidden";
+            }
+        }
+
+        function checkpassword() {
+            var passval = password.value;
+            if(passval.length < 8 ){
+               
+                err1.style.visibility = "visible";
+                err1.innerHTML = "Enter minimum 8 character password";
+            }
+            else{
+                err1.style.visibility = "hidden";
+            }
+        }
+        function seepassword(){
+            if(password.type === "password"){
+                password.type = "text";
+            }
+            else{
+                password.type = "password";
+            }
+        }
+
+        function verifypassword(){
+             var passval = password.value;
+            if(passval !== cnfpassword.value){
+                err3.style.visibility = "visible";
+                err3.innerHTML = "Password mismatched. Check the password."
+            }
+            else{
+                err3.style.visibility = "hidden"
+            }
+        }
+        function refresh(){
+          fname.value = ""
+          
+        }
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            checkname();
+            checklname();
+            checkage();
+            checkpassword();
+            verifypassword();
+            // refresh();
+            
+            
+        })
+    </script>
+</body>
+</html>
